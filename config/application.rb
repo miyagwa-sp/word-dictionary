@@ -34,6 +34,8 @@ module Dictionary
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    
+    # この設定を入れないと下記ホスト名でURLにアクセスできない（セキュリティ対策のための設定）
     config.hosts << "df0231768f45401a8ec12dc61b1e01ff.vfs.cloud9.ap-northeast-1.amazonaws.com"
   end
 end

@@ -1,10 +1,10 @@
 <%= form_with(url: '/', method: 'GET') do |f| %>
     <div class="row p-2">
         <div class="col-sm-2">
-            <%= f.label :word, '調べる単語'%>
+            <%= f.label :word, 'キーワード'%>
         </div>
         <div class="col-sm-10">
-            <%= f.text_field :word, class: 'form-control'%>
+            <%= f.text_field :word, class: 'form-control', value: params[:word] %>
         </div>
     </div>
     <div class="row p-2">
@@ -16,6 +16,8 @@
                         <p class="card-text"><%= @word.meaning %></p>
                     </div>
                 </div>
+            <% else %>
+                <p>指定されたキーワードにマッチする英単語はありませんでした。</p>
             <% end %>
             <% if @other_words && @other_words.length > 0 %>
                 <h3 class="mt-5">その他関連する単語</h3>
