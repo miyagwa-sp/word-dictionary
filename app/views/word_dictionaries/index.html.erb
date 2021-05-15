@@ -9,13 +9,32 @@
     </div>
     <div class="row p-2">
         <div class="col-sm-12">
-            <% if @meaning %>
+            <% if @word %>
                 <div class="card p-2">
                     <div class="card-body">
-                        <h5 class="card-title">意味</h5>
-                        <p class="card-text"><%= @meaning %></p>
+                        <h5 class="card-title"><%= @word.word %></h5>
+                        <p class="card-text"><%= @word.meaning %></p>
                     </div>
                 </div>
+            <% end %>
+            <% if @other_words && @other_words.length > 0 %>
+                <h3 class="mt-5">その他関連する単語</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">単語</th>
+                            <th scope="col">意味</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @other_words.each do |other_word| %>
+                            <tr>
+                                <td><%= other_word.word %></td>
+                                <td><%= other_word.meaning %></td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
             <% end %>
         </div>
     </div>
