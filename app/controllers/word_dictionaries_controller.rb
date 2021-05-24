@@ -5,5 +5,6 @@ class WordDictionariesController < ApplicationController
     end
 
     def create
+        # pushのテスト
     end
 end
